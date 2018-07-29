@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "901808340014",
+    "firebase_url": "https://movementcontrol-794bc.firebaseio.com",
+    "project_id": "movementcontrol-794bc",
+    "storage_bucket": "movementcontrol-794bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901808340014:android:9a28fba27d3d1572",
+        "android_client_info": {
+          "package_name": "com.example.aimsh.movementcontrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901808340014-qhtb3iegcv2r7jrrq7ukee57f88s1a2e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aimsh.movementcontrol",
+            "certificate_hash": "d0c9de8f82c82b13741d58aa3184b1d6362e4d59"
+          }
+        },
+        {
+          "client_id": "901808340014-p5ilgfh0aee98gr0ssk75dvq4g0hpdko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEfCfwr_EB5uDzxlBxTC2fjIc_q8AjDOw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901808340014-p5ilgfh0aee98gr0ssk75dvq4g0hpdko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
