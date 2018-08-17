@@ -2,6 +2,7 @@ package com.example.aimsh.movementcontrol;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class ScannerPage extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_scanner_page, container, false);
+
 
 
         RadioGroup radioGroup = (RadioGroup) v.findViewById(R.id.radiogroupID);

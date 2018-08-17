@@ -3,6 +3,7 @@ package com.example.aimsh.movementcontrol;
 import android.content.Intent;
 import android.hardware.Camera;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,11 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements LoginPage.OnFragm
 //    DatabaseReference myRef = databse.getReference();
 //    private ArrayList<String> mTexts = new ArrayList<>();
 
+    private FirebaseAuth mAuth;
+
     private DatabaseReference myRef;
 
     DateFormat df = new SimpleDateFormat("MM.dd.yyyy G 'at' HH:mm:ss");
@@ -74,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements LoginPage.OnFragm
         setContentView(R.layout.activity_main);
 
         myRef = FirebaseDatabase.getInstance().getReference();
-
+        mAuth = FirebaseAuth.getInstance();
         if(savedInstanceState == null) {
             if (findViewById(R.id.fragmentContainer) != null) {
                 getSupportFragmentManager().beginTransaction()
@@ -171,23 +179,40 @@ public class MainActivity extends AppCompatActivity implements LoginPage.OnFragm
 
 
     @Override
-    public void onFragmentInteraction(String TAG, String username, String password) {
-//        ScannerPage scannerFragment = (ScannerPage) getSupportFragmentManager().findFragmentById(R.id.scanner_pageID);
+    public void onFragmentInteraction(String username, String password) {
 
-        if(TAG.equals("login")) {
-            ScannerPage scannerFragment = new ScannerPage();
-            //Bundle args = new Bundle();
+        mAuth.signInWithEmailAndPassword(username, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            ScannerPage scannerFragment = new ScannerPage();
 
-            FragmentTransaction transaction = getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragmentContainer, scannerFragment)
-                    .addToBackStack(null);
 
-            // Commit the transaction
-            transaction.commit();
-        }else {
-            Toast.makeText(this, "WRONG USERNAME OR PASSWORD", Toast.LENGTH_LONG).show();
-        }
+                            FragmentTransaction transaction = getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.fragmentContainer, scannerFragment)
+                                    .addToBackStack(null);
+
+                            // Commit the transaction
+                            transaction.commit();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+//                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+//                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
+                            Toast.makeText(getBaseContext(), "WRONG USERNAME OR PASSWORD", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+
     }
 
 

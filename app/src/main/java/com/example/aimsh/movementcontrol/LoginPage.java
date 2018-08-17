@@ -4,11 +4,22 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
+
+import static android.content.ContentValues.TAG;
+import static com.example.aimsh.movementcontrol.MainActivity.carVinNum;
 
 
 /**
@@ -34,11 +45,21 @@ public class LoginPage extends Fragment {
 
         TextView tv = (TextView)  v.findViewById(R.id.loginID);
         TextView tv1 = (TextView) v.findViewById(R.id.passwordID);
-        String username = tv.getText().toString();
-        String pas = tv1.getText().toString();
+//        String username = tv.getText().toString();
+//        String pas = tv1.getText().toString();
 
         Button login = (Button) v.findViewById(R.id.login_buttonID);
-        login.setOnClickListener(view -> mListener.onFragmentInteraction("login", username, pas));
+        //login.setOnClickListener(view -> mListener.onFragmentInteraction("login", username, pas));
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = tv.getText().toString();
+                String pas = tv1.getText().toString();
+                mListener.onFragmentInteraction( username, pas);
+
+            }
+        });
 
         return v;
     }
@@ -79,6 +100,6 @@ public class LoginPage extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(String TAG, String username, String password);
+        void onFragmentInteraction(String username, String password);
     }
 }

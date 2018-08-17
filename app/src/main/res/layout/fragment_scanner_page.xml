@@ -1,53 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scanner_pageID"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScannerPage"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".ScannerPage">
 
     <!-- TODO: Update blank fragment layout -->
 
     <Button
         android:id="@+id/carID"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="88dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/radiogroupID"
+        android:layout_marginTop="77dp"
         android:background="@color/colorPrimaryDark"
         android:text="CAR"
-        app:layout_constraintEnd_toStartOf="@+id/scan_id"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <Button
-        android:id="@+id/badgeID"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="BADGE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textColor="@android:color/background_light" />
 
     <RadioGroup
         android:id="@+id/radiogroupID"
-        android:layout_width="147dp"
-        android:layout_height="188dp"
-        android:layout_marginEnd="194dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:layout_width="146dp"
+        android:layout_height="209dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/monitorID"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="212dp">
 
         <RadioButton
             android:id="@+id/returnID"
@@ -94,109 +74,94 @@
 
     <Button
         android:id="@+id/monitorID"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="91dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="63dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="6dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/car_historyID"
+        android:layout_marginStart="23dp"
         android:background="@color/colorPrimaryDark"
         android:text="Monitor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/car_historyID"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/car_historyID"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="91dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="63dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="6dp"
+        android:layout_alignStart="@+id/badgeID"
+        android:layout_alignTop="@+id/badge_historyID"
         android:background="@color/colorPrimaryDark"
         android:text="Car History"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/badge_historyID"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/badge_historyID"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="91dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="63dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginTop="6dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="77dp"
+        android:layout_marginStart="133dp"
         android:background="@color/colorPrimaryDark"
         android:text="Badge History"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Button
-        android:id="@+id/scan_id"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="SCAN"
-        app:layout_constraintEnd_toStartOf="@+id/badgeID"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="41dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/carID"
+        android:layout_marginTop="154dp"
         android:fontFamily="monospace"
         android:text="Choose Location"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carID" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="43dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="16dp"
+        android:layout_alignEnd="@+id/badgeID"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
         android:fontFamily="monospace"
         android:text="Scan Method:"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="42dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/carID"
+        android:layout_marginBottom="151dp"
         android:fontFamily="monospace"
         android:text="Check Progress"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radiogroupID" />
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/badgeID"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignTop="@+id/carID"
+        android:background="@color/colorPrimaryDark"
+        android:text="BADGE"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/scan_id"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_alignStart="@+id/badge_historyID"
+        android:layout_alignTop="@+id/carID"
+        android:background="@color/colorPrimaryDark"
+        android:text="SCAN"
+        android:textColor="@android:color/background_light" />
+
+</RelativeLayout>

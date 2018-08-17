@@ -1,70 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginPage"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".LoginPage">
 
     <!-- TODO: Update blank fragment layout -->
 
     <EditText
         android:id="@+id/loginID"
-        android:layout_width="217dp"
+        android:layout_width="301dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="263dp"
         android:ems="10"
         android:hint="Username"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/passwordID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/passwordID"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="75dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="197dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/login_buttonID"
-        app:layout_constraintStart_toStartOf="@+id/loginID"
-        app:layout_constraintTop_toBottomOf="@+id/loginID" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/login_buttonID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp"
         android:background="@android:color/holo_green_dark"
-        android:text="Log In"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordID" />
+        android:text="Log In" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="230dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="296dp"
+        android:layout_height="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:fontFamily="monospace"
         android:text="  Movement Control"
         android:textAlignment="center"
         android:textColor="@android:color/holo_green_light"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/loginID"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
